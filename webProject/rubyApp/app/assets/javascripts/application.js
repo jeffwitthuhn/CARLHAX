@@ -14,4 +14,8 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.tooltipster.min.js
+//= pgwslider
+//= placeholder_support_IE
+//= selectnav.min
 //= require_tree .
