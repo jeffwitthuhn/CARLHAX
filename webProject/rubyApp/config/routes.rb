@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create, :edit, :show, :update]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :subscriptions
+  # , only: [:create, :destroy]
 
   match '/home',    to: 'users#home',       via: 'get'
-  match '/admin',   to: 'users#admin',      via: 'get'
+  # match '/admin',   to: 'users#admin',      via: 'get'
   match '/signup',  to: 'users#new',        via: 'get'
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

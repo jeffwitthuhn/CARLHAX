@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params
     @user = User.new user_params
     if @user.save
       sign_in @user
@@ -62,7 +61,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email,
+                                 :first_name,
+                                 :last_name,
+                                 :phone_number,
+                                 :subscribed,
+                                 :password,
+                                 :password_confirmation)
   end
 
   def correct_user
@@ -79,6 +84,6 @@ class UsersController < ApplicationController
 
   def admin_user
     @user = current_user
-    redirect_to(@user) unless current_user.admin?
+    redirect_to @user unless current_user.admin?
   end
 end

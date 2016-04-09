@@ -30,9 +30,13 @@ module SessionsHelper
     end
   end
 
+  def full_name user
+    "#{user.first_name} #{user.last_name}"
+  end
+
   def sign_out
-    current_user.update_attribute(:remember_token,
-                                  User.digest(User.new_remember_token))
+    # current_user.update_attribute(:remember_token,
+    #                               User.digest(User.new_remember_token))
     cookies.delete(:remember_token)
     self.current_user = nil
   end
@@ -44,10 +48,5 @@ module SessionsHelper
 
   def store_location
     session[:return_to] = request.url if request.get?
-  end
-
-  NAME_REGEX = /^[^@]*/i
-  def extract_name_from email
-    email.match NAME_REGEX
   end
 end
