@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
 
   resources :users, only: [:index, :new, :create, :edit, :show, :update]
-  resources :questions
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/home',    to: 'users#home',       via: 'get'

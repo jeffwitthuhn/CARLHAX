@@ -3,14 +3,12 @@
 
 <div class="table_index">
   <table>
-    <thread>
-      <tr>
-        <td>Id</td>
-        <td>Email</td>
-        <td>Admin</td>
-        <td>Date Added<td>
-      </tr>
-    </thread>
+    <tr>
+      <td>Id</td>
+      <td>Email</td>
+      <td>Admin</td>
+      <td>Date Added<td>
+    </tr>
     <% @users.find_each do |user| %>
     <tr>
       <td><%= user.id %></td>
