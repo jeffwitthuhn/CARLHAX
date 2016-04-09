@@ -1,0 +1,7 @@
+<div class="center hero-unit">
+  <h1>Welcome to the land of electronic wizards</h1>
+  <h2>news goes here<h2>
+      <% unless signed_in? %>
+      <%= link_to "Sign up here!", signup_path, class: "btn btn-large btn-primary" %>
+      <% end %>
+</div>

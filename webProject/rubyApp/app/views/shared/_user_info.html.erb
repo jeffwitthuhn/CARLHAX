@@ -1,0 +1,7 @@
+<% if signed_in? %>
+<h1><%= current_user.first_name %>
+  <%= current_user.last_name %> is here.</h1>
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+<% end %>

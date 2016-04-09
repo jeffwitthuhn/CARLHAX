@@ -9,6 +9,12 @@ default: &default
   pool: 5
   timeout: 5000
 
+  # adapter: mysql2
+  # ecoding: utf8
+  # database: club_web_site
+  # username root
+  # password csciclub
+
 development:
   <<: *default
   database: db/development.sqlite3
@@ -23,3 +29,8 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+
+  # cscsi server
+  # root
+  # csciclub
