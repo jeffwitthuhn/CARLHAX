@@ -1,0 +1,23 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<div class="table_index">
+  <table>
+    <thread>
+      <tr>
+        <td>Id</td>
+        <td>Email</td>
+        <td>Admin</td>
+        <td>Date Added<td>
+      </tr>
+    </thread>
+    <% @users.find_each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= link_to user.email, user %></td>
+      <td><%= user.admin %></td>
+      <td><%= user.created_at.strftime("%m-%d-%Y") %></td>
+    </tr>
+    <% end %>
+</div>
+</table>
