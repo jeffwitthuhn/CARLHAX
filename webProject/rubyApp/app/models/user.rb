@@ -12,8 +12,11 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6, maximum: 72 }
 
+  # VALID_EMAIL_REGEX = /^([0-9]{11}|[0-9]{10}|)$/i
   validates :phone_number,
-            length: { minimum: 10, maximum: 11 }
+            allow_blank: true,
+            # format: { with: VALID_EMAIL_REGEX },
+            length: { minimum: 10, maxium: 11 }
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -30,7 +33,10 @@ class User < ActiveRecord::Base
   end
 
   def nationalize_phone_number
-    self.phone_number += 10 ** 11 if self.phone_number.to_i > 10 ** 10
+    n = self.phone_number
+    if n < 1e9.to_i
+      self.phone_number += 1e10.to_i unless n == 0
+    end
   end
 
   def downcase_email
