@@ -2,7 +2,14 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <tr>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <ul><%= @user.email %></ul>
+        <ul><%= @user.subscribed == 0 ?
+                "Subscribed" :
+                "Unsubscribed" %></ul>
+        <ul><%= @user.phone_number %></ul>
+      </tr>
     </section>
   </aside>
 </div>

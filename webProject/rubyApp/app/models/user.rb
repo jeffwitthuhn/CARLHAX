@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
 
   def nationalize_phone_number
     n = self.phone_number
-    if n < 1e10.to_i
-      self.phone_number += 1e11.to_i unless n == 0
+    if n < 1e9.to_i
+      self.phone_number += 1e10.to_i unless n == 0
     end
   end
 
