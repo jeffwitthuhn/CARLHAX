@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC>
+<html xmlns="http://csci.club" lang="en">
 <html>
   <head>
 		<title>Welcome to St. Cloud State's Computer SCIience Club's site</title>
@@ -12,15 +13,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <% flash.each do |key, val| %>
-      <div class="alert alert-<%= key %>"><%= val %></div>
-      <% end %>
+    <!-- <%= render 'layouts/header' %> -->
+    <!-- <div class="container"> -->
+    <!--   <% flash.each do |key, val| %> -->
+    <!--   <div class="alert alert-<%= key %>"><%= val %></div> -->
+    <!--   <% end %> -->
 
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
-      <%= render 'layouts/footer' %>
+      <!-- <%= debug(params) if Rails.env.development? %> -->
+      <!-- <%= render 'layouts/footer' %> -->
     </div>
   </body>
 </html>
